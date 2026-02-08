@@ -1,0 +1,2 @@
+TARGET_CLASS,criterion,Coverage,Total_Goals,Covered_Goals,LineCoverage,LineCoverageBitString,BranchCoverage,BranchCoverageBitString,CBranchCoverage,CBranchCoverageBitString,WeakMutationScore,WeakMutationCoverageBitString,MethodTraceCoverage,MethodTraceCoverageBitString
+CalculadoraSimples,LINE;BRANCH;CBRANCH;WEAKMUTATION;METHODTRACE,0.8173913043478261,115,94,1.0,1111111111111111111111111111,1.0,11111111111111111,0.0,00000000000000000,0.9215686274509803,111111110101111111110101111111111111111111111111111,1.0,11
