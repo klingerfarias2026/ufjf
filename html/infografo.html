@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: SBSE vs LLM - Trabalho Final Expandido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { background: white; padding: 0; }
+            .shadow-2xl { box-shadow: none; }
+        }
+        .flow-dot {
+            height: 12px;
+            width: 12px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 4px;
+        }
+        .vertical-line {
+            width: 2px;
+            background: #cbd5e1;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden border border-blue-100">
+        
+        <!-- HEADER -->
+        <header class="bg-blue-900 text-white p-10 text-center relative">
+            <h1 class="text-2xl md:text-4xl font-black mb-4 uppercase tracking-tight leading-tight">
+                Análise Crítica e Experimental: <br><span class="text-blue-400">Geração de Testes com IA</span>
+            </h1>
+            <div class="flex justify-center items-center space-x-4 mb-4">
+                <span class="h-px w-12 bg-blue-500"></span>
+                <p class="text-blue-200 font-semibold tracking-widest uppercase text-xs">SBSE vs. LLMs em Engenharia de Software</p>
+                <span class="h-px w-12 bg-blue-500"></span>
+            </div>
+            <p class="text-sm text-blue-300 max-w-2xl mx-auto opacity-80">
+                Uma investigação sobre como a convergência de algoritmos evolutivos e modelos de linguagem resolve o "Problema do Oráculo" e eleva a qualidade do SDLC.
+            </p>
+        </header>
+
+        <!-- SEÇÃO 1: FUNDAMENTAÇÃO TEÓRICA (UNIDADES 1-6) -->
+        <section class="p-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-900 text-white p-3 rounded-xl mr-4"><i class="fas fa-book-open"></i></div>
+                <h2 class="text-xl font-bold text-blue-900 uppercase">01. Fundamentação e Evolução</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-5 rounded-2xl border-t-4 border-blue-900">
+                    <h3 class="font-bold text-blue-900 mb-2 text-sm uppercase">AI4SE (Unid. 1-2)</h3>
+                    <p class="text-xs text-gray-600">A IA como motor de automação no SDLC, evoluindo de predição de defeitos para agentes generativos co-pilotos.</p>
+                </div>
+                <div class="bg-blue-50 p-5 rounded-2xl border-t-4 border-blue-600">
+                    <h3 class="font-bold text-blue-900 mb-2 text-sm uppercase">SBSE & AGs (Unid. 3)</h3>
+                    <p class="text-xs text-gray-600">Busca heurística baseada em aptidão física. Excelente para encontrar crashes, mas limitado pela "Miopia Semântica".</p>
+                </div>
+                <div class="bg-blue-50 p-5 rounded-2xl border-t-4 border-blue-400">
+                    <h3 class="font-bold text-blue-900 mb-2 text-sm uppercase">LLMs & Oráculos (Unid. 4-5)</h3>
+                    <p class="text-xs text-gray-600">Capacidade de inferir a intenção do código. Transforma a execução bruta em validação funcional real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: O EXPERIMENTO (DADOS REAIS) -->
+        <section class="p-8 bg-slate-50 relative">
+            <div class="flex items-center mb-8">
+                <div class="bg-blue-600 text-white p-3 rounded-xl mr-4"><i class="fas fa-vial"></i></div>
+                <h2 class="text-xl font-bold text-blue-900 uppercase">02. Estudo de Caso: Calculadora Java</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Coluna Esquerda: SBST Puro -->
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-red-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-1 rounded">PARTE A: EVOSUITE</span>
+                        <i class="fas fa-times-circle text-red-500"></i>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-sm font-medium"><i class="fas fa-check text-green-500 mr-2"></i> Cobertura de Linha: 100%</li>
+                        <li class="flex items-center text-sm font-medium"><i class="fas fa-exclamation-triangle text-red-500 mr-2"></i> Escore de Mutação: 0%</li>
+                    </ul>
+                    <div class="bg-red-50 p-3 rounded-lg">
+                        <p class="text-[11px] text-red-800 leading-tight">
+                            <strong>A falha:</strong> O código é executado, mas os resultados não são verificados. Mutantes críticos (como troca de operadores) sobrevivem sem oráculo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Híbrido -->
+                <div class="bg-blue-900 p-6 rounded-3xl shadow-xl text-white">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-blue-700 text-blue-100 text-[10px] font-bold px-2 py-1 rounded">PARTE B: HÍBRIDO (+LLM)</span>
+                        <i class="fas fa-check-circle text-green-400"></i>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-sm font-medium"><i class="fas fa-check text-green-400 mr-2"></i> Cobertura de Linha: 100%</li>
+                        <li class="flex items-center text-sm font-medium"><i class="fas fa-shield-alt text-blue-300 mr-2"></i> Escore de Mutação: 29%</li>
+                    </ul>
+                    <div class="bg-blue-800 p-3 rounded-lg">
+                        <p class="text-[11px] text-blue-100 leading-tight">
+                            <strong>O ganho:</strong> A IA gerou asserções lógicas que "mataram" 5 mutantes. O oráculo semântico validou a regra de negócio do CLI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: ANÁLISE DE ESFORÇO VS MANUTENÇÃO -->
+        <section class="p-8">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-400 text-white p-3 rounded-xl mr-4"><i class="fas fa-balance-scale"></i></div>
+                <h2 class="text-xl font-bold text-blue-900 uppercase">03. Esforço vs. Manutenibilidade</h2>
+            </div>
+            
+            <div class="overflow-hidden border border-gray-100 rounded-2xl">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-blue-900 text-white">
+                        <tr>
+                            <th class="p-4">Critério</th>
+                            <th class="p-4">EvoSuite (SBST)</th>
+                            <th class="p-4">LLM (ChatGPT/Gemini)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600">
+                        <tr class="border-b border-gray-100">
+                            <td class="p-4 font-bold bg-blue-50">Esforço Inicial</td>
+                            <td class="p-4">Baixo (Geração Automática)</td>
+                            <td class="p-4">Médio (Requer Engenharia de Prompt)</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-4 font-bold bg-blue-50">Legibilidade</td>
+                            <td class="p-4">Baixa (Variáveis genéricas)</td>
+                            <td class="p-4">Alta (Código "limpo" e humano)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-blue-50">Manutenção</td>
+                            <td class="p-4">Dificultada pelo Scaffolding</td>
+                            <td class="p-4">Superior (Lógica fácil de atualizar)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: O FUTURO (MAPE-K) -->
+        <section class="p-8 bg-blue-900 text-white">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-500 text-white p-3 rounded-xl mr-4"><i class="fas fa-sync-alt"></i></div>
+                <h2 class="text-xl font-bold uppercase">04. Sistemas Self-Healing (Unid. 6)</h2>
+            </div>
+            <p class="text-sm text-blue-200 mb-8 italic">A integração total culmina na computação autonômica, onde o software se autorrepara via ciclo MAPE-K.</p>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center">
+                <div class="bg-blue-800 p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center border-2 border-blue-400">
+                    <span class="text-xs font-bold">Monitorar</span>
+                </div>
+                <i class="fas fa-arrow-right hidden md:block text-blue-500"></i>
+                <div class="bg-blue-800 p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center border-2 border-blue-400">
+                    <span class="text-xs font-bold">Analisar</span>
+                </div>
+                <i class="fas fa-arrow-right hidden md:block text-blue-500"></i>
+                <div class="bg-blue-800 p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center border-2 border-blue-400">
+                    <span class="text-xs font-bold">Planejar</span>
+                </div>
+                <i class="fas fa-arrow-right hidden md:block text-blue-500"></i>
+                <div class="bg-blue-800 p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center border-2 border-blue-400">
+                    <span class="text-xs font-bold">Executar</span>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center bg-blue-800 p-6 rounded-3xl border border-blue-700">
+                <h3 class="font-bold text-lg mb-2">VERDITO DO TRABALHO FINAL</h3>
+                <p class="text-sm text-blue-100">
+                    A IA não substitui o teste baseado em busca, ela o <strong>complementa</strong>. Enquanto o SBST garante que o código é "visitado", as LLMs garantem que o comportamento é "correto". O Engenheiro de Software do futuro é o <strong>Curador do Conhecimento</strong> que orquestra essas duas forças.
+                </p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-50 p-8 text-center border-t border-gray-100">
+            <div class="flex justify-center space-x-6 mb-4 text-gray-400">
+                <div class="flex items-center"><i class="fab fa-java mr-2"></i><span class="text-[10px]">Java 11+</span></div>
+                <div class="flex items-center"><i class="fas fa-database mr-2"></i><span class="text-[10px]">PITest</span></div>
+                <div class="flex items-center"><i class="fab fa-github mr-2"></i><span class="text-[10px]">ufjf/calculadora</span></div>
+            </div>
+            <p class="text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-1">
+                Universidade Federal de Juiz de Fora | ICE - DCC
+            </p>
+            <p class="text-[10px] text-gray-500">Disciplina: Inteligência Artificial na Engenharia de Software</p>
+            <p class="text-[9px] text-gray-400 mt-2 italic">Autor: Klinger Augusto de Oliveira Farias | Fevereiro, 2026</p>
+        </footer>
+    </div>
+
+    <!-- BOTÃO DE EXPORTAÇÃO -->
+    <div class="mt-8 text-center no-print">
+        <button onclick="window.print()" class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-full shadow-2xl transition duration-300 transform hover:scale-105 flex items-center mx-auto">
+            <i class="fas fa-file-pdf mr-3 text-xl"></i> EXPORTAR PARA PDF / IMPRIMIR TRABALHO
+        </button>
+    </div>
+
+</body>
+</html>
