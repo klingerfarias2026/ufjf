@@ -32,6 +32,10 @@
             background: #dcfce7;
             border-right: 1px solid #86efac;
         }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-slate-100 font-sans p-4 md:p-8">
@@ -43,13 +47,13 @@
             <h1 class="text-2xl md:text-3xl font-black mb-4 uppercase tracking-tight leading-tight">
                 Análise Crítica e Experimental: <br><span class="text-blue-400 font-light">Geração de Testes com IA</span>
             </h1>
-            <p class="text-sm text-blue-300 max-w-2xl mx-auto opacity-80 uppercase tracking-widest">
+            <p class="text-sm text-blue-300 max-w-2xl mx-auto opacity-80 uppercase tracking-widest font-semibold">
                 Trabalho Final - Inteligência Artificial na Engenharia de Software
             </p>
         </header>
 
         <!-- 01. BREVE RESUMO -->
-        <section class="p-8 border-b border-gray-100">
+        <section class="p-8 border-b border-gray-100 card-hover">
             <div class="flex items-center mb-4">
                 <div class="bg-blue-900 text-white p-2 rounded-lg mr-3"><i class="fas fa-align-left"></i></div>
                 <h2 class="text-xl font-bold text-blue-900 uppercase">01. Breve Resumo</h2>
@@ -70,25 +74,25 @@
                     <thead class="bg-blue-900 text-white">
                         <tr>
                             <th class="p-4">Métrica</th>
-                            <th class="p-4">EvoSuite (Parte A)</th>
-                            <th class="p-4">Híbrido: EvoSuite + LLM (Parte B)</th>
+                            <th class="p-4 text-center">EvoSuite (Parte A)</th>
+                            <th class="p-4 text-center">Híbrido: EvoSuite + LLM (Parte B)</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white">
                         <tr class="border-b border-gray-100 hover:bg-blue-50 transition">
                             <td class="p-4 font-bold text-blue-900">Cobertura de Linha</td>
-                            <td class="p-4">100% (28/28)</td>
-                            <td class="p-4">100% (28/28)</td>
+                            <td class="p-4 text-center">100% (28/28)</td>
+                            <td class="p-4 text-center">100% (28/28)</td>
                         </tr>
                         <tr class="border-b border-gray-100 hover:bg-blue-50 transition">
                             <td class="p-4 font-bold text-blue-900">Cobertura de Mutação</td>
-                            <td class="p-4 text-red-500 font-semibold">0% (Oráculo Cego)</td>
-                            <td class="p-4 text-green-600 font-bold">29% (Validado)</td>
+                            <td class="p-4 text-center text-red-500 font-semibold">0% (Oráculo Cego)</td>
+                            <td class="p-4 text-center text-green-600 font-bold">29% (Validado)</td>
                         </tr>
                         <tr class="hover:bg-blue-50 transition">
                             <td class="p-4 font-bold text-blue-900">Mutantes Mortos</td>
-                            <td class="p-4">0 / 17</td>
-                            <td class="p-4 font-bold">5 / 17</td>
+                            <td class="p-4 text-center">0 / 17</td>
+                            <td class="p-4 text-center font-bold text-blue-700">5 / 17</td>
                         </tr>
                     </tbody>
                 </table>
@@ -96,7 +100,7 @@
         </section>
 
         <!-- 03. RELATÓRIO DE COBERTURA -->
-        <section class="p-8 border-b border-gray-100">
+        <section class="p-8 border-b border-gray-100 card-hover">
             <div class="flex items-center mb-6">
                 <div class="bg-green-600 text-white p-2 rounded-lg mr-3"><i class="fas fa-file-contract"></i></div>
                 <h2 class="text-xl font-bold text-blue-900 uppercase">03. Relatório de Cobertura do Teste de Pista</h2>
@@ -140,11 +144,11 @@
                 <h2 class="text-xl font-bold text-blue-900 uppercase">04. Desafios e Ética</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 leading-relaxed">
-                <div class="bg-white p-4 rounded-xl border-l-4 border-orange-500 shadow-sm">
+                <div class="bg-white p-4 rounded-xl border-l-4 border-orange-500 shadow-sm card-hover">
                     <p class="mb-3"><strong>Riscos Técnicos:</strong> LLMs podem reproduzir padrões obsoletos ou gerar código inseguro por serem modelos probabilísticos.</p>
                     <p><strong>Dependência Cognitiva:</strong> A automação excessiva pode reduzir a vigilância crítica do engenheiro.</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl border-l-4 border-orange-500 shadow-sm">
+                <div class="bg-white p-4 rounded-xl border-l-4 border-orange-500 shadow-sm card-hover">
                     <p class="mb-3"><strong>Propriedade Intelectual:</strong> A autoria de códigos gerados por modelos treinados em repositórios públicos ainda é um debate jurídico.</p>
                     <p><strong>Manutenibilidade:</strong> Testes via LLM são mais legíveis que os densos gerados por SBST clássico.</p>
                 </div>
@@ -160,8 +164,8 @@
             <p class="text-sm leading-relaxed text-blue-100 text-justify mb-6">
                 Os resultados deste estudo indicam um deslocamento paradigmático no papel do engenheiro de software, que passa a atuar menos como executor técnico e mais como curador estratégico de soluções automatizadas. A combinação de técnicas estruturais, como o SBST, com abordagens generativas baseadas em LLMs, representa o estado da arte para a garantia de qualidade em sistemas de software. Como tendência futura, observa-se o avanço de sistemas self-healing, nos quais a IA não apenas identifica falhas, mas também propõe correções automáticas em ambientes de produção.
             </p>
-            <div class="bg-blue-800 p-6 rounded-2xl text-center border border-blue-700">
-                <span class="text-xs uppercase tracking-widest text-blue-300 font-bold block mb-2">Veredito</span>
+            <div class="bg-blue-800 p-6 rounded-2xl text-center border border-blue-700 shadow-lg">
+                <span class="text-xs uppercase tracking-widest text-blue-300 font-bold block mb-2">Veredito Final</span>
                 <p class="text-sm font-medium italic text-white">"O experimento apresentado ratifica que a IA é um elemento essencial para transformar métricas brutas de cobertura em garantias efetivas de funcionalidade e robustez do software."</p>
             </div>
         </section>
@@ -170,8 +174,10 @@
         <footer class="bg-gray-100 p-6 text-center text-gray-400 border-t border-gray-200">
             <p class="text-[10px] font-bold uppercase tracking-[0.3em] mb-1">Universidade Federal de Juiz de Fora</p>
             <p class="text-[10px] mb-2">Engenharia de Software & Inteligência Artificial</p>
-            <div class="text-blue-600 text-[10px] mb-4">
-                <a href="https://github.com/klingerfarias2026/ufjf" target="_blank" class="hover:underline">github.com/klingerfarias2026/ufjf</a>
+            <div class="text-blue-600 text-[10px] mb-4 font-semibold">
+                <a href="https://github.com/klingerfarias2026/ufjf" target="_blank" class="hover:underline">
+                    <i class="fab fa-github mr-1"></i> github.com/klingerfarias2026/ufjf
+                </a>
             </div>
             <p class="text-[9px] italic">Arquivo: infografo.html | Autor: Klinger Augusto de Oliveira Farias | 2026</p>
         </footer>
